@@ -1,0 +1,6 @@
+a=int(input("enter the number of matches played\n"))
+b=int(input("enter the number innings batted\n"))
+c=int(input("enter number of times notout\n"))
+d=int(input("enter runs scored\n"))
+res = float(d/(b-c))
+print("batting average=",res)
