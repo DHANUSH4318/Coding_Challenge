@@ -1,0 +1,92 @@
+import java.util.Scanner;
+
+public class Keypad {
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        String s = in.nextLine();
+        StringBuilder s1 = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            for (int j = i; j <s.length(); j++) {
+                if(s.charAt(i)=='0')
+                {
+                    s1.append("/ ");
+                    break;
+                }
+                else if(s.charAt(i)==s.charAt(j))
+                {
+                    s1.append(s.charAt(j));
+                }
+                else
+                {
+                    i=j-1;
+                    s1.append(" ");
+                    break;
+                }
+            }
+        }
+        StringBuilder x = new StringBuilder();
+        String t=s1.toString().substring(0,s1.length()-1);
+        System.out.println(t);
+        String a[] = t.split(" ");
+        for (int i = 0; i < a.length; i++) {
+            if(a[i].charAt(0)=='2')
+            {
+                if(a[i].length()==1){x.append("a");}
+                if(a[i].length()==2){x.append("b");}
+                if(a[i].length()==3){x.append("c");}
+            }
+            if(a[i].charAt(0)=='3')
+            {
+                if(a[i].length()==1){x.append("d");}
+                if(a[i].length()==2){x.append("e");}
+                if(a[i].length()==3){x.append("f");}
+            }
+            if(a[i].charAt(0)=='4')
+            {
+                if(a[i].length()==1){x.append("g");}
+                if(a[i].length()==2){x.append("h");}
+                if(a[i].length()==3){x.append("i");}
+            }
+            if(a[i].charAt(0)=='5')
+            {
+                if(a[i].length()==1){x.append("j");}
+                if(a[i].length()==2){x.append("k");}
+                if(a[i].length()==3){x.append("l");}
+                if(a[i].length()==6){x.append("ll");}
+            }
+            if(a[i].charAt(0)=='6')
+            {
+                if(a[i].length()==1){x.append("m");}
+                if(a[i].length()==2){x.append("n");}
+                if(a[i].length()==3){x.append("o");}
+            }
+            if(a[i].charAt(0)=='7')
+            {
+                if(a[i].length()==1){x.append("p");}
+                if(a[i].length()==2){x.append("q");}
+                if(a[i].length()==3){x.append("r");}
+                if(a[i].length()==4){x.append("s");}
+            }
+            if(a[i].charAt(0)=='8')
+            {
+                if(a[i].length()==1){x.append("t");}
+                if(a[i].length()==2){x.append("u");}
+                if(a[i].length()==3){x.append("v");}
+            }
+            if(a[i].charAt(0)=='9')
+            {
+                if(a[i].length()==1){x.append("w");}
+                if(a[i].length()==2){x.append("x");}
+                if(a[i].length()==3){x.append("y");}
+                if(a[i].length()==4){x.append("z");}
+                if(a[i].length()==5){x.append("y");}
+            }
+            if(a[i].charAt(0)=='/')
+            {
+                x.append(" ");
+            }
+        }
+        System.out.println(x.toString());
+    }
+}
